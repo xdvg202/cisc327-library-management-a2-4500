@@ -1,6 +1,12 @@
 import os
+import sys
 import pytest
 import sqlite3
+
+# Ensure project root on sys.path so `services` can be imported from /test
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 # Ensure tests run against the project-local SQLite file
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'library.db')
