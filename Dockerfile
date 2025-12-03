@@ -11,11 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy all application files
-COPY app.py .
-COPY database.py .
-COPY routes/ ./routes/
-COPY services/ ./services/
-COPY templates/ ./templates/
+COPY . .
 
 # Expose port 5000
 EXPOSE 5000
